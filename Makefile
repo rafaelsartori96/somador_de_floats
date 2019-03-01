@@ -4,7 +4,7 @@ CFLAGS = -Wextra
 DIR = src
 FILENAME = $(DIR)/main.c
 TARGET = ./main
-SRCS := $(shell find $(DIR) -name '*.cpp')
+SRCS := $(shell find $(DIR) -name '*.c')
 OBJS = $(SRCS:.c=.o)
 
 
@@ -24,7 +24,7 @@ EXTENSIONS = *.c *.h *.in *.out *.sh
 all:$(TARGET)
 
 $(TARGET):$(OBJS)
-	$(CC) -o$(TARGET) $(OBJS) $(CFLAGS)
+	$(CC) -o $(TARGET) $(OBJS) $(CFLAGS)
 
 $(OBJS):$(SRCS)
 	$(CC) $(CFLAGS) -c $< -o $@
